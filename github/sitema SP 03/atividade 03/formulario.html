@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cadastro de produto da loja Santa Pimenta Atacado.">
+    <title>Cadastro de Produto - Santa Pimenta Atacado</title>
+
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <hr>
+
+    <nav style="text-align: center;">
+        <a href="index.html">Início</a> |
+        <a href="contato.html">Contato</a> |
+        <a href="formulario.html">Formulário</a> |
+        <a href="vendas.html">Produtos</a> |
+        <a href="carrinho.html">Carrinho</a>
+    </nav>
+
+    <hr>
+
+    <div style="text-align: center;">
+
+        <h1>Cadastro de Produto 🛍️</h1>
+
+        <p>
+            Preencha as informações abaixo para cadastrar um novo produto da loja Santa Pimenta Atacado.
+        </p>
+
+        <form action="#" method="post">
+            
+            <label for="nome">Nome do produto:</label><br>
+            <input type="text" id="nome" name="nome_produto" required>
+            <br><br>
+
+            <label for="email">Email do fornecedor:</label><br>
+            <input type="email" id="email" name="email_fornecedor" required>
+            <br><br>
+
+            <label for="senha">Senha de acesso do sistema:</label><br>
+            <input type="password" id="senha" name="senha_sistema" required>
+            <br><br>
+
+            <label for="quantidade">Quantidade em estoque:</label><br>
+            <input type="number" id="quantidade" name="quantidade_estoque" required>
+            <br><br>
+
+            <label for="categoria">Categoria do produto:</label><br>
+            <select id="categoria" name="categoria_produto" required>
+
+                <option value="">Selecione</option>
+                <option value="blusa">Blusa</option>
+                <option value="calca">Calça jeans</option>
+                <option value="conjunto">Conjunto feminino</option>
+                <option value="look_noite">Look para noite</option>
+
+            </select>
+
+            <br><br>
+
+            <p><strong>Tamanho do produto:</strong></p>
+
+            <input type="radio" id="tam_p" name="tamanho_produto" value="P" required>
+            <label for="tam_p">P</label>
+
+            <input type="radio" id="tam_m" name="tamanho_produto" value="M">
+            <label for="tam_m">M</label>
+
+            <input type="radio" id="tam_g" name="tamanho_produto" value="G">
+            <label for="tam_g">G</label>
+
+            <br><br>
+
+            <p><strong>Cores disponíveis:</strong></p>
+
+            <input type="checkbox" id="cor_preto" name="cor_produto[]" value="Preto">
+            <label for="cor_preto">Preto</label>
+
+            <input type="checkbox" id="cor_branco" name="cor_produto[]" value="Branco">
+            <label for="cor_branco">Branco</label>
+
+            <input type="checkbox" id="cor_azul" name="cor_produto[]" value="Azul">
+            <label for="cor_azul">Azul</label>
+
+            <br><br>
+
+            <label for="descricao">Descrição do produto:</label><br>
+            <textarea id="descricao" name="descricao_produto" rows="4" cols="40"></textarea>
+
+            <br><br>
+
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar formulário">
+
+        </form>
+
+    </div>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 Santa Pimenta Atacado - Moda com estilo e qualidade.</p>
+    </footer>
+
+</body>
+
+</html>
