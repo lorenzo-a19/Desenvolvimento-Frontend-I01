@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Conheça os produtos da Santa Pimenta Atacado: moda feminina moderna, elegante e acessível para revendedores.">
+    <title>Produtos - Santa Pimenta Atacado</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Nossos produtos 👚</h1>
+        <p>Conheça algumas das peças disponíveis na Santa Pimenta Atacado.</p>
+    </header>
+
+    <hr>
+
+    <nav style="text-align: center;">
+        <a href="index.html">Início</a> |
+        <a href="contato.html">Contato</a> |
+        <a href="formulario.html">Formulário</a> |
+        <a href="vendas.html">Produtos</a> |
+        <a href="carrinho.html">Carrinho</a>
+    </nav>
+
+    <hr>
+
+    <main>
+        <section>
+            <h2>Tabela de produtos disponíveis</h2>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Categoria</th>
+                        <th>Tamanho</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Conjunto feminino</td>
+                        <td>Casual</td>
+                        <td>M</td>
+                        <td>R$120</td>
+                    </tr>
+
+                    <tr>
+                        <td>Noite</td>
+                        <td>G</td>
+                        <td>R$140</td>
+                    </tr>
+
+                    <tr>
+                        <td>Blusa feminina</td>
+                        <td>Casual</td>
+                        <td>P</td>
+                        <td>R$60</td>
+                    </tr>
+
+                    <tr>
+                        <td>Calça jeans</td>
+                        <td>Jeans</td>
+                        <td>M</td>
+                        <td>R$150</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">Look para noite</td>
+                        <td>G</td>
+                        <td>R$200</td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td colspan="4">
+                            Tabela ilustrativa de produtos Santa Pimenta Atacado
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>Categorias de produtos</h2>
+
+            <p>
+                Trabalhamos com peças modernas e femininas para diferentes ocasiões.
+            </p>
+
+            <ul>
+                <li><a href="#noite">Looks para noite ✨</a></li>
+                <li><a href="#jeans">Calças jeans 👖</a></li>
+                <li><a href="#blusas">Blusas e camisetas 👚</a></li>
+                <li><a href="#conjuntos">Conjuntos femininos 👗</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="conjuntos">Conjuntos femininos 👗</h2>
+            <img src="conjunto.jpg" width="200" height="200" alt="Conjunto feminino">
+            <button data-id="1" data-nome="Conjunto feminino" data-preco="120">
+                Comprar
+            </button>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="blusas">Blusas e camisetas 👚</h2>
+            <img src="Blusas.jpg" width="200" height="200" alt="Blusa feminina">
+            <button data-id="2" data-nome="Blusa feminina" data-preco="60">
+                Comprar
+            </button>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="jeans">Calças jeans 👖</h2>
+            <img src="jeans.jpg" width="200" height="200" alt="Calça jeans">
+            <button data-id="3" data-nome="Calça jeans" data-preco="150">
+                Comprar
+            </button>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2 id="noite">Looks para noite ✨</h2>
+            <img src="noite.jpg" width="200" height="200" alt="Look para noite">
+            <button data-id="4" data-nome="Look noite" data-preco="200">
+                Comprar
+            </button>
+
+            <p id="mensagem"></p>
+        </section>
+    </main>
+
+    <script src="carrinho.js"></script>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 Santa Pimenta Atacado - Moda com estilo e qualidade.</p>
+    </footer>
+
+</body>
+
+</html>

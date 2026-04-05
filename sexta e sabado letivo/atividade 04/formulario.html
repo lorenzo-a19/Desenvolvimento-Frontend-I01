@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cadastro de cliente da Santa Pimenta Atacado.">
+
+    <title>Cadastro de Cliente</title>
+
+    <style>
+        textarea {
+
+            resize: none;
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Cadastro de Cliente 🛍️</h1>
+
+        <p>Preencha seus dados para realizar o cadastro.</p>
+
+    </header>
+
+    <hr>
+
+    <nav style="text-align: center;">
+
+        <a href="index.html">Início</a> |
+
+        <a href="contato.html">Contato</a> |
+
+        <a href="formulario.html">Formulário</a> |
+
+        <a href="vendas.html">Produtos</a> |
+
+        <a href="carrinho.html">Carrinho</a>
+
+    </nav>
+
+    <hr>
+
+    <main>
+
+        <section style="text-align: center;">
+
+            <h2>Formulário de cadastro</h2>
+
+            <form>
+
+                <label for="nome">Nome:</label><br>
+
+                <input type="text" id="nome" name="nome_cliente" required
+                    oninvalid="this.setCustomValidity('Digite seu nome')" oninput="this.setCustomValidity('')">
+
+                <br><br>
+
+
+                <label for="email">Email:</label><br>
+
+                <input type="email" id="email" name="email_cliente" required
+                    oninvalid="this.setCustomValidity('Digite um email válido')" oninput="this.setCustomValidity('')">
+
+                <br><br>
+
+
+                <label for="idade">Idade:</label><br>
+
+                <input type="number" id="idade" name="idade_cliente" min="18" max="60" required
+                    oninvalid="this.setCustomValidity('Idade deve ser entre 18 e 60 anos')"
+                    oninput="this.setCustomValidity('')">
+
+                <br><br>
+
+
+                <label for="senha">Senha:</label><br>
+
+                <input type="password" id="senha" name="senha_cliente" minlength="6" required
+                    oninvalid="this.setCustomValidity('Senha deve ter no mínimo 6 caracteres')"
+                    oninput="this.setCustomValidity('')">
+
+                <br><br>
+
+
+                <label for="cep">CEP:</label><br>
+
+                <input type="text" id="cep" name="cep_cliente" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000"
+                    required oninvalid="this.setCustomValidity('Digite um CEP no formato 00000-000')"
+                    oninput="this.setCustomValidity('')">
+
+                <br><br>
+
+
+                <label for="telefone">Telefone:</label><br>
+
+                <input type="tel" id="telefone" name="telefone_cliente" pattern="[0-9]{2}[0-9]{5}-[0-9]{4}"
+                    placeholder="2799999-9999" required
+                    oninvalid="this.setCustomValidity('Digite um telefone válido com DDD')"
+                    oninput="this.setCustomValidity('')">
+
+                <br><br>
+
+
+                <label for="categoria">Categoria de interesse:</label><br>
+
+                <select id="categoria" name="categoria_interesse" required
+                    oninvalid="this.setCustomValidity('Selecione uma categoria')" oninput="this.setCustomValidity('')">
+
+                    <option value="">Selecione</option>
+
+                    <option value="blusas">Blusas</option>
+
+                    <option value="jeans">Calças jeans</option>
+
+                    <option value="conjuntos">Conjuntos</option>
+
+                    <option value="noite">Looks noite</option>
+
+                </select>
+
+                <br><br>
+
+
+                <p><strong>Forma de compra:</strong></p>
+
+                <input type="radio" id="atacado" name="tipo_cliente" value="atacado" required
+                    oninvalid="this.setCustomValidity('Selecione uma forma de compra')"
+                    oninput="this.setCustomValidity('')">
+
+                <label for="atacado">Atacado</label>
+
+
+                <input type="radio" id="varejo" name="tipo_cliente" value="varejo">
+
+                <label for="varejo">Varejo</label>
+
+                <br><br>
+
+
+                <p><strong>Cores favoritas:</strong></p>
+
+                <input type="checkbox" id="preto" name="cores[]" value="preto">
+
+                <label for="preto">Preto</label>
+
+
+                <input type="checkbox" id="branco" name="cores[]" value="branco">
+
+                <label for="branco">Branco</label>
+
+
+                <input type="checkbox" id="azul" name="cores[]" value="azul">
+
+                <label for="azul">Azul</label>
+
+                <br><br>
+
+
+                <label for="observacoes">Observações:</label><br>
+
+                <textarea id="observacoes" name="observacoes_cliente" rows="4" cols="40">
+
+</textarea>
+
+                <br><br>
+
+
+                <input type="submit" value="Enviar">
+
+                <input type="reset" value="Limpar">
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <hr>
+
+    <footer>
+
+        <p>&copy; 2026 Santa Pimenta Atacado - Moda com estilo e qualidade.</p>
+
+    </footer>
+
+</body>
+
+</html>
