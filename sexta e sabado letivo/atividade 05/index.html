@@ -3,75 +3,303 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Conheça a história da Santa Pimenta Atacado e nossa trajetória na moda feminina.">
-    <title>Sobre a empresa - Santa Pimenta Atacado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Conheça a Santa Pimenta Atacado, loja de moda feminina com peças modernas, elegantes e acessíveis para lojistas e revendedores.">
+    <title>Início - Santa Pimenta Atacado</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .barra-fixa {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .conteudo-barra {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .marca-site {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-menu img {
+            display: block;
+        }
+
+        .texto-marca h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .texto-marca p {
+            margin: 2px 0 0;
+            font-size: 14px;
+        }
+
+        .menu-navegacao {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .menu-navegacao a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        .secao-estilo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .secao-estilo img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .texto-estilo {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .video-centro,
+        .contato,
+        .localizacao,
+        footer {
+            text-align: center;
+        }
+
+        .categorias ul {
+            padding-left: 20px;
+        }
+
+        footer {
+            border-top: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        iframe {
+            max-width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .conteudo-barra {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .marca-site {
+                flex-direction: column;
+            }
+
+            .texto-estilo {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Sobre a Santa Pimenta Atacado ✨</h1>
-        <p>Conheça nossa história, missão e valores.</p>
+    <header class="barra-fixa" id="topo" title="Cabeçalho do site">
+        <div class="conteudo-barra">
+            <div class="marca-site">
+                <a href="index.html" class="logo-menu" title="Voltar para a página inicial">
+                    <img src="imagem/capa/logo-santa-pimenta.png" alt="Logo da Santa Pimenta Atacado"
+                        width="110">
+                </a>
+
+                <div class="texto-marca">
+                    <h1>Santa Pimenta Atacado ✨</h1>
+                    <p>Moda feminina com estilo, qualidade e variedade para lojistas e revendedores.</p>
+                </div>
+            </div>
+
+            <nav class="menu-navegacao" title="Menu principal do site" data-info="menu-principal">
+                <a href="index.html" title="Ir para a página inicial">Início</a>
+                <a href="contato.html" title="Ir para a página de contato">Contato</a>
+                <a href="vendas.html" title="Ir para a página de produtos">Produtos</a>
+                <a href="carrinho.html" title="Ir para a página do carrinho">Carrinho</a>
+            </nav>
+        </div>
     </header>
 
-    <hr>
-
-    <nav style="text-align: center;">
-        <a href="index.html">Início</a> |
-        <a href="contato.html">Contato</a> |
-        <a href="formulario.html">Formulário</a> |
-        <a href="vendas.html">Produtos</a> |
-        <a href="carrinho.html">Carrinho</a>
-    </nav>
-
-    <hr>
-
     <main>
-        <section>
-            <h2>Nossa história</h2>
-
+        <section class="apresentacao" id="apresentacao" title="Apresentação da loja">
+            <h2>Bem-vindo à nossa loja</h2>
             <p>
-                A <strong>Santa Pimenta Atacado</strong> surgiu com o objetivo de oferecer
-                <em>moda feminina acessível, moderna e de qualidade</em> para lojistas e revendedores.
+                A <strong>Santa Pimenta Atacado</strong> trabalha com
+                <em>moda feminina acessível, moderna e de qualidade</em>,
+                oferecendo peças pensadas para valorizar o estilo e a elegância de cada cliente.
+            </p>
+            <p>
+                Nosso objetivo é atender lojistas e revendedores com produtos que unem beleza,
+                conforto e variedade, acompanhando sempre as tendências da moda.
             </p>
 
-            <p>
-                Desde o início, buscamos trabalhar com peças selecionadas que acompanham
-                as tendências da moda e valorizam o estilo de cada cliente.
-            </p>
+            <hr>
 
-            <p>
-                Com dedicação e compromisso, a empresa vem conquistando espaço no mercado,
-                oferecendo produtos que unem beleza, conforto e variedade 👗
-            </p>
+            <article class="historia-loja" title="História da loja" data-info="historia-da-loja">
+                <h2>Nossa história</h2>
+                <p>
+                    A <strong>Santa Pimenta Atacado</strong> surgiu com o objetivo de oferecer
+                    peças modernas para mulheres que valorizam praticidade e elegância.
+                </p>
+                <p>
+                    Desde o início, buscamos trabalhar com roupas que acompanham as tendências da moda e atendem
+                    lojistas e revendedores com variedade e bom atendimento.
+                </p>
+                <p>
+                    Com dedicação e compromisso, a empresa vem conquistando espaço no mercado, oferecendo produtos que
+                    unem beleza, conforto e estilo. 👗
+                </p>
+            </article>
         </section>
 
         <hr>
 
-        <section>
-            <h2>Nossa missão</h2>
+        <section class="secao-estilo" title="Destaque de estilo da loja">
+            <img src="imagem/aproxima do seu estilo/modelo-look-bege.jpeg" alt="Look feminino Santa Pimenta"
+                width="330">
 
-            <p>
-                Nossa missão é oferecer roupas femininas com qualidade e estilo,
-                proporcionando praticidade e confiança para nossos clientes.
-            </p>
+            <article class="texto-estilo" title="Descrição do estilo da loja">
+                <h2>Apaixone-se pelo seu estilo 🌶️</h2>
+                <p>
+                    A <strong>Santa Pimenta Atacado</strong> traduz a essência da mulher moderna que valoriza
+                    elegância, conforto e personalidade em cada detalhe.
+                </p>
+                <p>
+                    Nossa loja oferece conjuntos, blusas, calças jeans e looks especiais para diferentes ocasiões,
+                    sempre com charme e versatilidade.
+                </p>
+                <p>
+                    Cada peça é escolhida para valorizar ainda mais a beleza e a identidade de quem veste Santa
+                    Pimenta.
+                </p>
+            </article>
         </section>
 
         <hr>
 
-        <section>
-            <h2>Nossos valores</h2>
+        <section class="destaques" title="Missão e valores da loja">
+            <h2>Destaques da loja</h2>
 
+            <article class="bloco-destaque" title="Informações sobre a missão da loja">
+                <h3>Nossa missão</h3>
+                <p>
+                    Oferecer roupas femininas com qualidade e estilo, proporcionando praticidade, confiança e boas
+                    opções para nossos clientes.
+                </p>
+            </article>
+
+            <article class="bloco-destaque" title="Informações sobre os valores da loja">
+                <h3>Nossos valores</h3>
+                <p>
+                    Valorizamos a <strong>qualidade</strong>, o <em>bom atendimento</em>, o compromisso e a satisfação
+                    de cada cliente.
+                </p>
+            </article>
+        </section>
+
+        <hr>
+
+        <section class="categorias" title="Categorias em destaque">
+            <h2>Categorias em destaque</h2>
+            <ul>
+                <li>Conjuntos femininos 👗</li>
+                <li>Blusas e camisetas 👚</li>
+                <li>Calças femininas 👖</li>
+                <li>Looks para noite ✨</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section class="beneficios" title="Vantagens da loja">
+            <h2>Por que comprar com a gente?</h2>
+            <ol>
+                <li>Peças modernas e variadas.</li>
+                <li>Atendimento para lojistas e revendedores.</li>
+                <li>Qualidade e bom custo-benefício.</li>
+            </ol>
+        </section>
+
+        <hr>
+
+        <section class="video-centro" title="Vídeo externo sobre moda feminina">
+            <h2>Inspiração de moda</h2>
+            <p>Confira um conteúdo em vídeo com inspiração de moda feminina:</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/DlKsYHC8QAw"
+                title="Vídeo sobre moda feminina" allowfullscreen></iframe>
+        </section>
+
+        <hr>
+
+        <section class="contato" title="Informações de contato da loja">
+            <h2>Contato da loja 📞</h2>
+            <p><strong>Telefone:</strong> (27) 99964-6821</p>
+            <p><strong>Email:</strong> contato@santapimenta.com</p>
+            <p><strong>Localização:</strong> Colatina - ES</p>
             <p>
-                Valorizamos a <strong>qualidade</strong>, o <em>bom atendimento</em> e o compromisso
-                com a satisfação dos nossos clientes.
+                <strong>Instagram:</strong>
+                <a href="https://www.instagram.com/santapimenta_es?igsh=N2dwb3lxMHdsZHg3" target="_blank"
+                    title="Abrir Instagram da Santa Pimenta Atacado">
+                    @santapimenta_es
+                </a>
             </p>
+        </section>
+
+        <section class="localizacao" title="Mapa da localização da loja">
+            <h2>Localização da loja</h2>
+            <article title="Mapa de localização da loja">
+                <iframe
+                    src="https://www.google.com/maps?q=Shopping%20Moda%20Brasil%20Premium%20Colatina%20ES&output=embed"
+                    width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
+                    title="Mapa da localização da loja">
+                </iframe>
+            </article>
         </section>
     </main>
 
-    <hr>
-
-    <footer>
+    <footer class="rodape" title="Rodapé do site">
         <p>&copy; 2026 Santa Pimenta Atacado - Moda com estilo e qualidade.</p>
     </footer>
 

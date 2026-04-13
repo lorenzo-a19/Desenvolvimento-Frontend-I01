@@ -3,42 +3,140 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Carrinho de compras da Santa Pimenta Atacado.">
-    <title>Seu Carrinho</title>
+    <title>Seu Carrinho - Santa Pimenta Atacado</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .barra-fixa {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .conteudo-barra {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .marca-site {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .texto-marca h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .texto-marca p {
+            margin: 2px 0 0;
+            font-size: 14px;
+        }
+
+        .menu-navegacao {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .menu-navegacao a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .conteudo-barra {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .marca-site {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Seu carrinho 🛒</h1>
-        <p>Confira os produtos adicionados antes de finalizar a compra.</p>
+    <header class="barra-fixa" title="Cabeçalho do site">
+        <div class="conteudo-barra">
+            <div class="marca-site">
+                <a href="index.html" class="logo-menu" title="Voltar para a página inicial">
+                    <img src="imagem/capa/logo-santa-pimenta.png" alt="Logo da Santa Pimenta Atacado"
+                        width="110">
+                </a>
+
+                <div class="texto-marca">
+                    <h1>Santa Pimenta Atacado ✨</h1>
+                    <p>Moda feminina com estilo, qualidade e variedade para lojistas e revendedores.</p>
+                </div>
+            </div>
+
+            <nav class="menu-navegacao" title="Menu principal do site" data-info="menu-principal">
+                <a href="index.html">Início</a>
+                <a href="contato.html">Contato</a>
+                <a href="vendas.html">Produtos</a>
+                <a href="carrinho.html">Carrinho</a>
+            </nav>
+        </div>
     </header>
 
-    <hr>
-
-    <nav style="text-align: center;">
-        <a href="index.html">Início</a> |
-        <a href="contato.html">Contato</a> |
-        <a href="formulario.html">Formulário</a> |
-        <a href="vendas.html">Produtos</a> |
-        <a href="carrinho.html">Carrinho</a>
-    </nav>
-
-    <hr>
-
     <main>
-        <section style="text-align: center; margin-top: 60px;">
+        <section class="secao-carrinho" title="Carrinho de compras">
             <h2>Produtos adicionados</h2>
 
-            <ul id="lista" style="list-style: none; padding: 0;"></ul>
+            <article class="lista-carrinho" title="Lista de produtos do carrinho">
+                <ul id="lista" style="list-style: none; padding: 0;" data-info="lista-carrinho"></ul>
+            </article>
 
-            <h2 id="total"></h2>
+            <article class="resumo-carrinho" title="Resumo do valor total da compra">
+                <h2 id="total" data-info="valor-total"></h2>
+            </article>
 
-            <button onclick="finalizarCompra()" style="padding: 10px 20px; font-size: 16px;">
-                Finalizar pagamento via Pix
-            </button>
+            <article class="finalizacao-compra" title="Finalização do pagamento">
+                <button onclick="finalizarCompra()" style="padding: 10px 20px; font-size: 16px;" class="botao-pagamento"
+                    title="Finalizar pagamento via Pix" data-info="botao-pix">
+                    Finalizar pagamento via Pix
+                </button>
 
-            <p id="mensagem-pagamento"></p>
+                <p id="mensagem-pagamento" class="mensagem-pagamento" data-info="mensagem-pagamento"></p>
+            </article>
         </section>
     </main>
 
@@ -60,27 +158,22 @@
         function finalizarCompra() {
             if (carrinho.length === 0) {
                 mensagemPagamento.textContent = "Não foi possível finalizar o pagamento, pois o carrinho está vazio.";
-
                 setTimeout(() => {
                     mensagemPagamento.textContent = "";
                 }, 2500);
-
                 return;
             }
 
             mensagemPagamento.textContent = "Pagamento via Pix realizado com sucesso ✅";
-
             localStorage.removeItem("carrinho");
 
             setTimeout(() => {
-                window.location.href = "index.html";
+                window.location.href = "../index.html";
             }, 2000);
         }
     </script>
 
-    <hr>
-
-    <footer>
+    <footer title="Rodapé do site">
         <p>&copy; 2026 Santa Pimenta Atacado - Moda com estilo e qualidade.</p>
     </footer>
 

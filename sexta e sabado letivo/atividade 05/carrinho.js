@@ -2,7 +2,7 @@ let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
 let mensagem = document.getElementById("mensagem");
 
-document.querySelectorAll("button").forEach(botao => {
+document.querySelectorAll(".produto button").forEach(botao => {
     botao.addEventListener("click", () => {
         const produto = {
             id: botao.dataset.id,
@@ -11,13 +11,14 @@ document.querySelectorAll("button").forEach(botao => {
         };
 
         carrinho.push(produto);
-
         localStorage.setItem("carrinho", JSON.stringify(carrinho));
 
-        mensagem.textContent = "Produto adicionado ao carrinho 🛒";
+        if (mensagem) {
+            mensagem.textContent = "Produto adicionado ao carrinho 🛒";
 
-        setTimeout(() => {
-            mensagem.textContent = "";
-        }, 2000);
+            setTimeout(() => {
+                mensagem.textContent = "";
+            }, 2000);
+        }
     });
 });
