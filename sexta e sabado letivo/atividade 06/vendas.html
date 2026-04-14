@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Conheça os produtos da Santa Pimenta Atacado: moda feminina moderna, elegante e acessível para revendedores.">
+    <title>Produtos - Santa Pimenta Atacado</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .barra-fixa {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .conteudo-barra {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .marca-site {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .texto-marca h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .texto-marca p {
+            margin: 2px 0 0;
+            font-size: 14px;
+        }
+
+        .menu-navegacao {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .menu-navegacao a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .tabela-produtos {
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .galeria-produtos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .produto {
+            width: 220px;
+            text-align: center;
+        }
+
+        .produto img {
+            display: block;
+            margin: auto;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .conteudo-barra {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .marca-site {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="barra-fixa" title="Cabeçalho do site">
+        <div class="conteudo-barra">
+            <div class="marca-site">
+                <a href="index.html" class="logo-menu" title="Voltar para a página inicial">
+                    <img src="imagem/capa/logo-santa-pimenta.png" alt="Logo da Santa Pimenta Atacado"
+                        width="110">
+                </a>
+
+                <div class="texto-marca">
+                    <h1>Santa Pimenta Atacado ✨</h1>
+                    <p>Moda feminina com estilo, qualidade e variedade para lojistas e revendedores.</p>
+                </div>
+            </div>
+
+            <nav class="menu-navegacao" title="Menu principal do site" data-info="menu-principal">
+                <a href="index.html">Início</a>
+                <a href="contato.html">Contato</a>
+                <a href="vendas.html">Produtos</a>
+                <a href="carrinho.html">Carrinho</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section title="Categorias de produtos da loja">
+            <h2>Categorias de produtos</h2>
+            <ul>
+                <li><a href="#conjuntos">Conjuntos femininos 👗</a></li>
+                <li><a href="#blusas">Blusas e camisetas 👚</a></li>
+                <li><a href="#jeans">Calças femininas 👖</a></li>
+                <li><a href="#noite">Looks para noite ✨</a></li>
+            </ul>
+        </section>
+
+        <section class="tabela-produtos" title="Tabela de preços e tamanhos" data-info="tabela-de-produtos">
+            <h2>Tabela de preços e tamanhos</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th rowspan="2">Categoria</th>
+                        <th colspan="2">Informações do produto</th>
+                    </tr>
+                    <tr>
+                        <th>Tamanhos disponíveis</th>
+                        <th>Preço</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Blusas e camisetas</td>
+                        <td>P, M e G</td>
+                        <td>R$ 60,00</td>
+                    </tr>
+                    <tr>
+                        <td>Conjuntos femininos</td>
+                        <td>P, M e G</td>
+                        <td>R$ 120,00</td>
+                    </tr>
+                    <tr>
+                        <td>Calças femininas</td>
+                        <td>36, 38, 40 e 42</td>
+                        <td>R$ 150,00</td>
+                    </tr>
+                    <tr>
+                        <td>Looks para noite</td>
+                        <td>P, M e G</td>
+                        <td>R$ 200,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section title="Produtos da categoria conjuntos femininos">
+            <h2 id="conjuntos">Conjuntos femininos 👗</h2>
+            <div class="galeria-produtos">
+                <article class="produto" title="Conjunto feminino modelo 1">
+                    <img src="imagem/Conjuntos femininos/conjunto-feminino-01.jpg" width="200" height="200"
+                        alt="Conjunto feminino modelo 1">
+                    <p>Conjunto feminino modelo 1</p>
+                    <button data-id="201" data-nome="Conjunto feminino modelo 1" data-preco="120">Comprar</button>
+                </article>
+
+                <article class="produto" title="Conjunto feminino modelo 2">
+                    <img src="imagem/Conjuntos femininos/conjunto-feminino-02.jpg" width="200" height="200"
+                        alt="Conjunto feminino modelo 2">
+                    <p>Conjunto feminino modelo 2</p>
+                    <button data-id="202" data-nome="Conjunto feminino modelo 2" data-preco="120">Comprar</button>
+                </article>
+
+                <article class="produto" title="Conjunto feminino modelo 3">
+                    <img src="imagem/Conjuntos femininos/conjunto-feminino-03.jpg" width="200" height="200"
+                        alt="Conjunto feminino modelo 3">
+                    <p>Conjunto feminino modelo 3</p>
+                    <button data-id="203" data-nome="Conjunto feminino modelo 3" data-preco="120">Comprar</button>
+                </article>
+
+                <article class="produto" title="Conjunto feminino modelo 4">
+                    <img src="imagem/Conjuntos femininos/conjunto-feminino-04.jpg" width="200" height="200"
+                        alt="Conjunto feminino modelo 4">
+                    <p>Conjunto feminino modelo 4</p>
+                    <button data-id="204" data-nome="Conjunto feminino modelo 4" data-preco="120">Comprar</button>
+                </article>
+            </div>
+        </section>
+
+        <section title="Produtos da categoria blusas e camisetas">
+            <h2 id="blusas">Blusas e camisetas 👚</h2>
+            <div class="galeria-produtos">
+                <article class="produto" title="Blusa feminina modelo 1">
+                    <img src="imagem/blusa-camiseta/blusa-camiseta-01.jpg" width="200" height="200"
+                        alt="Blusa feminina modelo 1">
+                    <p>Blusa feminina modelo 1</p>
+                    <button data-id="11" data-nome="Blusa feminina modelo 1" data-preco="60">Comprar</button>
+                </article>
+
+                <article class="produto" title="Blusa feminina modelo 2">
+                    <img src="imagem/blusa-camiseta/blusa-camiseta-02.jpg" width="200" height="200"
+                        alt="Blusa feminina modelo 2">
+                    <p>Blusa feminina modelo 2</p>
+                    <button data-id="12" data-nome="Blusa feminina modelo 2" data-preco="60">Comprar</button>
+                </article>
+
+                <article class="produto" title="Blusa feminina modelo 3">
+                    <img src="imagem/blusa-camiseta/blusa-camiseta-03.jpg" width="200" height="200"
+                        alt="Blusa feminina modelo 3">
+                    <p>Blusa feminina modelo 3</p>
+                    <button data-id="13" data-nome="Blusa feminina modelo 3" data-preco="60">Comprar</button>
+                </article>
+
+                <article class="produto" title="Blusa feminina modelo 4">
+                    <img src="imagem/blusa-camiseta/blusa-camiseta-04.jpg" width="200" height="200"
+                        alt="Blusa feminina modelo 4">
+                    <p>Blusa feminina modelo 4</p>
+                    <button data-id="14" data-nome="Blusa feminina modelo 4" data-preco="60">Comprar</button>
+                </article>
+            </div>
+        </section>
+
+        <section title="Produtos da categoria calças femininas">
+            <h2 id="jeans">Calças femininas 👖</h2>
+            <div class="galeria-produtos">
+                <article class="produto" title="Calça jeans modelo 1">
+                    <img src="imagem/Calças jeans/calca-jeans-01.jpg" width="200" height="200"
+                        alt="Calça jeans modelo 1">
+                    <p>Calça jeans modelo 1</p>
+                    <button data-id="101" data-nome="Calça jeans modelo 1" data-preco="150">Comprar</button>
+                </article>
+
+                <article class="produto" title="Calça jeans modelo 2">
+                    <img src="imagem/Calças jeans/calca-jeans-02.jpg" width="200" height="200"
+                        alt="Calça jeans modelo 2">
+                    <p>Calça jeans modelo 2</p>
+                    <button data-id="102" data-nome="Calça jeans modelo 2" data-preco="150">Comprar</button>
+                </article>
+
+                <article class="produto" title="Calça jeans modelo 3">
+                    <img src="imagem/Calças jeans/calca-jeans-03.jpg" width="200" height="200"
+                        alt="Calça jeans modelo 3">
+                    <p>Calça jeans modelo 3</p>
+                    <button data-id="103" data-nome="Calça jeans modelo 3" data-preco="150">Comprar</button>
+                </article>
+
+                <article class="produto" title="Calça jeans modelo 4">
+                    <img src="imagem/Calças jeans/calca-jeans-04.jpg" width="200" height="200"
+                        alt="Calça jeans modelo 4">
+                    <p>Calça jeans modelo 4</p>
+                    <button data-id="104" data-nome="Calça jeans modelo 4" data-preco="150">Comprar</button>
+                </article>
+            </div>
+        </section>
+
+        <section title="Produtos da categoria looks para noite">
+            <h2 id="noite">Looks para noite ✨</h2>
+            <div class="galeria-produtos">
+                <article class="produto" title="Look para noite modelo 1">
+                    <img src="imagem/looks-noite/look-noite-01.jpeg" width="200" height="200"
+                        alt="Look para noite modelo 1">
+                    <p>Look para noite modelo 1</p>
+                    <button data-id="301" data-nome="Look para noite modelo 1" data-preco="200">Comprar</button>
+                </article>
+
+                <article class="produto" title="Look para noite modelo 2">
+                    <img src="imagem/looks-noite/look-noite-02.jpeg" width="200" height="200"
+                        alt="Look para noite modelo 2">
+                    <p>Look para noite modelo 2</p>
+                    <button data-id="302" data-nome="Look para noite modelo 2" data-preco="200">Comprar</button>
+                </article>
+
+                <article class="produto" title="Look para noite modelo 3">
+                    <img src="imagem/looks-noite/look-noite-03.jpeg" width="200" height="200"
+                        alt="Look para noite modelo 3">
+                    <p>Look para noite modelo 3</p>
+                    <button data-id="303" data-nome="Look para noite modelo 3" data-preco="200">Comprar</button>
+                </article>
+
+                <article class="produto" title="Look para noite modelo 4">
+                    <img src="imagem/looks-noite/look-noite-04.jpeg" width="200" height="200"
+                        alt="Look para noite modelo 4">
+                    <p>Look para noite modelo 4</p>
+                    <button data-id="304" data-nome="Look para noite modelo 4" data-preco="200">Comprar</button>
+                </article>
+            </div>
+        </section>
+
+        <p id="mensagem" class="mensagem-compra" title="Mensagem de compra"></p>
+    </main>
+
+    <script src="carrinho.js"></script>
+
+    <footer title="Rodapé do site">
+        <p>&copy; 2026 Santa Pimenta Atacado - Moda com estilo e qualidade.</p>
+    </footer>
+</body>
+
+</html>

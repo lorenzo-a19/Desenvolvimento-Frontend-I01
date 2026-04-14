@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de contato e cadastro da Santa Pimenta Atacado.">
+    <title>Contato - Santa Pimenta Atacado</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .barra-fixa {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #fff;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .conteudo-barra {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .marca-site {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .texto-marca h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .texto-marca p {
+            margin: 2px 0 0;
+            font-size: 14px;
+        }
+
+        .menu-navegacao {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .menu-navegacao a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .conteudo-contato {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        article,
+        form {
+            flex: 1 1 320px;
+        }
+
+        footer {
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .conteudo-barra {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .marca-site {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="barra-fixa" title="Cabeçalho do site">
+        <div class="conteudo-barra">
+            <div class="marca-site">
+                <a href="index.html" class="logo-menu" title="Voltar para a página inicial">
+                    <img src="imagem/capa/logo-santa-pimenta.png" alt="Logo da Santa Pimenta Atacado"
+                        width="110">
+                </a>
+
+                <div class="texto-marca">
+                    <h1>Santa Pimenta Atacado ✨</h1>
+                    <p>Moda feminina com estilo, qualidade e variedade para lojistas e revendedores.</p>
+                </div>
+            </div>
+
+            <nav class="menu-navegacao" title="Menu principal do site" data-info="menu-principal">
+                <a href="index.html">Início</a>
+                <a href="contato.html">Contato</a>
+                <a href="vendas.html">Produtos</a>
+                <a href="carrinho.html">Carrinho</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section title="Página de contato da loja">
+            <h2>Contato e cadastro</h2>
+            <p>
+                Preencha o formulário abaixo para entrar em contato com a loja ou cadastrar um produto para análise.
+            </p>
+
+            <div class="conteudo-contato">
+                <article class="informacoes-contato" title="Informações da loja" data-info="dados-da-loja">
+                    <h3>Informações da loja</h3>
+                    <p><strong>Telefone:</strong> (27) 99964-6821</p>
+                    <p><strong>Email:</strong> contato@santapimenta.com</p>
+                    <p><strong>Cidade:</strong> Colatina - ES</p>
+                    <p><strong>Atendimento:</strong> Segunda a sábado</p>
+                </article>
+
+                <form title="Formulário de contato" data-info="formulario-contato">
+                    <label for="nome">Nome do produto:</label><br>
+                    <input type="text" id="nome" name="nome_produto" minlength="3" required><br><br>
+
+                    <label for="email">Email do fornecedor:</label><br>
+                    <input type="email" id="email" name="email_fornecedor" required><br><br>
+
+                    <label for="senha">Senha de acesso do sistema:</label><br>
+                    <input type="password" id="senha" name="senha_sistema" minlength="6" required><br><br>
+
+                    <label for="quantidade">Quantidade em estoque:</label><br>
+                    <input type="number" id="quantidade" name="quantidade_estoque" min="1" required><br><br>
+
+                    <label for="categoria">Categoria do produto:</label><br>
+                    <select id="categoria" name="categoria_produto" required>
+                        <option value="">Selecione</option>
+                        <option value="blusa">Blusa</option>
+                        <option value="calca">Calça jeans</option>
+                        <option value="conjunto">Conjunto feminino</option>
+                        <option value="look_noite">Look para noite</option>
+                    </select>
+                    <br><br>
+
+                    <p><strong>Tamanho do produto:</strong></p>
+                    <input type="radio" id="tamanho-p" name="tamanho_produto" value="P" required>
+                    <label for="tamanho-p">P</label>
+
+                    <input type="radio" id="tamanho-m" name="tamanho_produto" value="M">
+                    <label for="tamanho-m">M</label>
+
+                    <input type="radio" id="tamanho-g" name="tamanho_produto" value="G">
+                    <label for="tamanho-g">G</label>
+                    <br><br>
+
+                    <p><strong>Cores disponíveis:</strong></p>
+                    <input type="checkbox" id="cor-preto" name="cor_produto" value="Preto">
+                    <label for="cor-preto">Preto</label>
+
+                    <input type="checkbox" id="cor-branco" name="cor_produto" value="Branco">
+                    <label for="cor-branco">Branco</label>
+
+                    <input type="checkbox" id="cor-azul" name="cor_produto" value="Azul">
+                    <label for="cor-azul">Azul</label>
+                    <br><br>
+
+                    <label for="descricao">Descrição do produto:</label><br>
+                    <textarea id="descricao" name="descricao_produto" rows="4" cols="40"
+                        title="Campo para descrever o produto"></textarea>
+                    <br><br>
+
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Limpar formulário">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer title="Rodapé do site">
+        <p>&copy; 2026 Santa Pimenta Atacado - Moda com estilo e qualidade.</p>
+    </footer>
+
+</body>
+
+</html>
