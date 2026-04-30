@@ -1,0 +1,195 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* ===== HEADER ===== */
+.barra-fixa {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fff;
+    border-bottom: 2px solid #ddd;
+}
+
+.conteudo-barra {
+    max-width: 1200px;
+    margin: auto;
+    padding: 8px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.marca-site {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-menu img {
+    width: 90px;
+}
+
+/* ===== TEXTO ===== */
+.texto-marca h1 {
+    font-size: 22px;
+}
+
+.texto-marca p {
+    font-size: 13px;
+    color: #555;
+}
+
+/* ===== MENU ===== */
+.menu-navegacao {
+    display: flex;
+    gap: 15px;
+}
+
+.menu-navegacao a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu-navegacao a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* ===== MAIN ===== */
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* ===== BOTÕES ===== */
+button,
+input[type="submit"],
+input[type="reset"] {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #444;
+}
+
+/* ===== PRODUTOS ===== */
+.galeria-produtos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.produto {
+    width: 220px;
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.produto:hover {
+    transform: scale(1.05);
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== TABELA ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #eee;
+}
+
+/* ===== FORMULÁRIO ===== */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px #ccc;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+/* ===== CARRINHO ===== */
+.lista-carrinho li {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    .conteudo-barra {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .marca-site {
+        flex-direction: column;
+    }
+}
