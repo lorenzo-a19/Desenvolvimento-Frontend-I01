@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 15</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        #cancelar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Mini Agenda</h1>
+
+    <form id="formulario">
+        <input type="hidden" id="inputId">
+
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="date" id="dataNascimento">
+
+        <button type="submit">Salvar</button>
+        <button type="button" id="cancelar">Cancelar</button>
+    </form>
+
+    <div id="lista"></div>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+        const inputId = document.getElementById("inputId");
+        const nome = document.getElementById("nome");
+        const dataNascimento = document.getElementById("dataNascimento");
+        const lista = document.getElementById("lista");
+        const cancelar = document.getElementById("cancelar");
+
+        function pegarAgenda() {
+            return JSON.parse(localStorage.getItem("agenda")) || [];
+        }
+
+        function salvarAgenda(agenda) {
+            localStorage.setItem("agenda", JSON.stringify(agenda));
+        }
+
+        function limparFormulario() {
+            inputId.value = "";
+            nome.value = "";
+            dataNascimento.value = "";
+            cancelar.style.display = "none";
+        }
+
+        function renderizarAgenda() {
+            const agenda = pegarAgenda();
+
+            lista.innerHTML = "";
+
+            if (agenda.length === 0) {
+                lista.innerHTML = "<p>Nenhum contato cadastrado.</p>";
+                return;
+            }
+
+            agenda.forEach(function (pessoa) {
+                lista.innerHTML += `
+                    <div class="card">
+                        <p>Nome: ${pessoa.nome}</p>
+                        <p>Data de nascimento: ${pessoa.dataNascimento}</p>
+
+                        <button onclick="editarPessoa('${pessoa.id}')">
+                            Editar
+                        </button>
+
+                        <button onclick="excluirPessoa('${pessoa.id}')">
+                            Excluir
+                        </button>
+                    </div>
+                `;
+            });
+        }
+
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let agenda = pegarAgenda();
+
+            if (inputId.value === "") {
+                const novaPessoa = {
+                    id: crypto.randomUUID(),
+                    nome: nome.value,
+                    dataNascimento: dataNascimento.value
+                };
+
+                agenda.push(novaPessoa);
+            } else {
+                agenda = agenda.map(function (pessoa) {
+                    if (pessoa.id === inputId.value) {
+                        return {
+                            id: inputId.value,
+                            nome: nome.value,
+                            dataNascimento: dataNascimento.value
+                        };
+                    }
+
+                    return pessoa;
+                });
+            }
+
+            salvarAgenda(agenda);
+            limparFormulario();
+            renderizarAgenda();
+        });
+
+        function editarPessoa(id) {
+            const agenda = pegarAgenda();
+
+            const pessoa = agenda.find(function (item) {
+                return item.id === id;
+            });
+
+            inputId.value = pessoa.id;
+            nome.value = pessoa.nome;
+            dataNascimento.value = pessoa.dataNascimento;
+
+            cancelar.style.display = "inline";
+        }
+
+        function excluirPessoa(id) {
+            const confirmar = confirm("Deseja excluir este contato?");
+
+            if (confirmar) {
+                let agenda = pegarAgenda();
+
+                agenda = agenda.filter(function (pessoa) {
+                    return pessoa.id !== id;
+                });
+
+                salvarAgenda(agenda);
+                renderizarAgenda();
+            }
+        }
+
+        cancelar.addEventListener("click", function () {
+            limparFormulario();
+        });
+
+        renderizarAgenda();
+    </script>
+
+</body>
+
+</html>

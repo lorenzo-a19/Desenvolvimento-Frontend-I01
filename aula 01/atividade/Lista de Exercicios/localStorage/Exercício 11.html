@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 11</title>
+</head>
+
+<body>
+
+    <button id="mais">+</button>
+    <button id="resetar">Resetar</button>
+
+    <h2>
+        Contador:
+        <span id="contador"></span>
+    </h2>
+
+    <script>
+        let contador =
+            parseInt(localStorage.getItem("contador")) || 0;
+
+        const span = document.getElementById("contador");
+
+        span.textContent = contador;
+
+        document.getElementById("mais").addEventListener("click", function () {
+            contador++;
+            span.textContent = contador;
+            localStorage.setItem("contador", contador);
+        });
+
+        document.getElementById("resetar").addEventListener("click", function () {
+            contador = 0;
+            span.textContent = contador;
+            localStorage.setItem("contador", contador);
+        });
+    </script>
+
+</body>
+
+</html>

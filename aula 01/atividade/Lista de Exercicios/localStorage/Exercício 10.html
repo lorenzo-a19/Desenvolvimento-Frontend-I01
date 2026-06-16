@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 10</title>
+</head>
+
+<body>
+
+    <form id="formulario">
+        <input type="text" id="nome" placeholder="Nome">
+        <input type="text" id="cidade" placeholder="Cidade">
+        <button type="submit">Salvar</button>
+    </form>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+        const nome = document.getElementById("nome");
+        const cidade = document.getElementById("cidade");
+
+        const dadosSalvos =
+            JSON.parse(localStorage.getItem("usuario")) || {};
+
+        if (dadosSalvos.nome) {
+            nome.value = dadosSalvos.nome;
+        }
+
+        if (dadosSalvos.cidade) {
+            cidade.value = dadosSalvos.cidade;
+        }
+
+        formulario.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const usuario = {
+                nome: nome.value,
+                cidade: cidade.value
+            };
+
+            localStorage.setItem(
+                "usuario",
+                JSON.stringify(usuario)
+            );
+        });
+    </script>
+
+</body>
+
+</html>

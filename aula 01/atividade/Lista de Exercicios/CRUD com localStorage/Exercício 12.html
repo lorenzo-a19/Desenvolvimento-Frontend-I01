@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 12</title>
+</head>
+
+<body>
+
+    <h1>Lista de Tarefas</h1>
+
+    <input type="text" id="tarefa" placeholder="Digite uma tarefa">
+    <button id="adicionar">Adicionar</button>
+
+    <div id="lista"></div>
+
+    <script>
+        const inputTarefa = document.getElementById("tarefa");
+        const botaoAdicionar = document.getElementById("adicionar");
+        const lista = document.getElementById("lista");
+
+        function pegarTarefas() {
+            return JSON.parse(localStorage.getItem("tarefas")) || [];
+        }
+
+        function salvarTarefas(tarefas) {
+            localStorage.setItem("tarefas", JSON.stringify(tarefas));
+        }
+
+        function renderizarTarefas() {
+            const tarefas = pegarTarefas();
+
+            lista.innerHTML = "";
+
+            tarefas.forEach(function (tarefa) {
+                lista.innerHTML += `
+                    <p>${tarefa.texto}</p>
+                `;
+            });
+        }
+
+        botaoAdicionar.addEventListener("click", function () {
+            const texto = inputTarefa.value;
+
+            const tarefas = pegarTarefas();
+
+            const novaTarefa = {
+                id: crypto.randomUUID(),
+                texto: texto
+            };
+
+            tarefas.push(novaTarefa);
+
+            salvarTarefas(tarefas);
+            renderizarTarefas();
+
+            inputTarefa.value = "";
+        });
+
+        renderizarTarefas();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 9</title>
+</head>
+
+<body>
+
+    <input type="text" id="texto">
+    <button id="salvar">Salvar</button>
+    <button id="carregar">Carregar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        const input = document.getElementById("texto");
+        const resultado = document.getElementById("resultado");
+
+        document.getElementById("salvar").addEventListener("click", function () {
+            localStorage.setItem("meuTexto", input.value);
+        });
+
+        document.getElementById("carregar").addEventListener("click", function () {
+            resultado.textContent = localStorage.getItem("meuTexto");
+        });
+    </script>
+
+</body>
+
+</html>

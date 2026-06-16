@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 8</title>
+</head>
+
+<body>
+
+    <script>
+        const produto = {
+            nome: "Notebook",
+            preco: 3500,
+            disponivel: true
+        };
+
+        const textoJSON = JSON.stringify(produto);
+
+        console.log(textoJSON);
+
+        const objetoRecuperado = JSON.parse(textoJSON);
+
+        console.log(objetoRecuperado.nome);
+    </script>
+
+</body>
+
+</html>

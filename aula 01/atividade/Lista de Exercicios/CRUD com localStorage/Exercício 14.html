@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 14</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Lista de Tarefas</h1>
+
+    <input type="text" id="tarefa" placeholder="Digite uma tarefa">
+    <button id="adicionar">Adicionar</button>
+
+    <div id="lista"></div>
+
+    <script>
+        const inputTarefa = document.getElementById("tarefa");
+        const botaoAdicionar = document.getElementById("adicionar");
+        const lista = document.getElementById("lista");
+
+        function pegarTarefas() {
+            return JSON.parse(localStorage.getItem("tarefas")) || [];
+        }
+
+        function salvarTarefas(tarefas) {
+            localStorage.setItem("tarefas", JSON.stringify(tarefas));
+        }
+
+        function renderizarTarefas() {
+            const tarefas = pegarTarefas();
+
+            lista.innerHTML = "";
+
+            if (tarefas.length === 0) {
+                lista.innerHTML = "<p>Lista vazia.</p>";
+                return;
+            }
+
+            tarefas.forEach(function (tarefa) {
+                lista.innerHTML += `
+                    <div class="card">
+                        <p>${tarefa.texto}</p>
+                        <button data-id="${tarefa.id}" class="excluir">
+                            Excluir
+                        </button>
+                    </div>
+                `;
+            });
+
+            const botoesExcluir = document.querySelectorAll(".excluir");
+
+            botoesExcluir.forEach(function (botao) {
+                botao.addEventListener("click", function () {
+                    const id = botao.getAttribute("data-id");
+
+                    let tarefas = pegarTarefas();
+
+                    tarefas = tarefas.filter(function (tarefa) {
+                        return tarefa.id !== id;
+                    });
+
+                    salvarTarefas(tarefas);
+                    renderizarTarefas();
+                });
+            });
+        }
+
+        botaoAdicionar.addEventListener("click", function () {
+            const texto = inputTarefa.value;
+
+            const tarefas = pegarTarefas();
+
+            const novaTarefa = {
+                id: crypto.randomUUID(),
+                texto: texto
+            };
+
+            tarefas.push(novaTarefa);
+
+            salvarTarefas(tarefas);
+            renderizarTarefas();
+
+            inputTarefa.value = "";
+        });
+
+        renderizarTarefas();
+    </script>
+
+</body>
+
+</html>

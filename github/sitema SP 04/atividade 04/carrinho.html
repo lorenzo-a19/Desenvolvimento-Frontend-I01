@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Carrinho de compras da Santa Pimenta Atacado.">
+    <title>Seu Carrinho</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Seu carrinho 🛒</h1>
+        <p>Confira os produtos adicionados antes de finalizar a compra.</p>
+    </header>
+
+    <hr>
+
+    <nav style="text-align: center;">
+        <a href="index.html">Início</a> |
+        <a href="contato.html">Contato</a> |
+        <a href="formulario.html">Formulário</a> |
+        <a href="vendas.html">Produtos</a> |
+        <a href="carrinho.html">Carrinho</a>
+    </nav>
+
+    <hr>
+
+    <main>
+        <section style="text-align: center; margin-top: 60px;">
+            <h2>Produtos adicionados</h2>
+
+            <ul id="lista" style="list-style: none; padding: 0;"></ul>
+
+            <h2 id="total"></h2>
+
+            <button onclick="finalizarCompra()" style="padding: 10px 20px; font-size: 16px;">
+                Finalizar pagamento via Pix
+            </button>
+
+            <p id="mensagem-pagamento"></p>
+        </section>
+    </main>
+
+    <script>
+        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+        let lista = document.getElementById("lista");
+        let total = 0;
+        let mensagemPagamento = document.getElementById("mensagem-pagamento");
+
+        carrinho.forEach(produto => {
+            let item = document.createElement("li");
+            item.textContent = produto.nome + " - R$ " + produto.preco;
+            lista.appendChild(item);
+            total += Number(produto.preco);
+        });
+
+        document.getElementById("total").textContent = "Total: R$ " + total;
+
+        function finalizarCompra() {
+            if (carrinho.length === 0) {
+                mensagemPagamento.textContent = "Não foi possível finalizar o pagamento, pois o carrinho está vazio.";
+
+                setTimeout(() => {
+                    mensagemPagamento.textContent = "";
+                }, 2500);
+
+                return;
+            }
+
+            mensagemPagamento.textContent = "Pagamento via Pix realizado com sucesso ✅";
+
+            localStorage.removeItem("carrinho");
+
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 2000);
+        }
+    </script>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 Santa Pimenta Atacado - Moda com estilo e qualidade.</p>
+    </footer>
+
+</body>
+
+</html>
