@@ -1,32 +1,57 @@
 const produtos = [
-    { nome: "Conjunto feminino", preco: 120, categoria: "Conjuntos" },
-    { nome: "Blusa feminina", preco: 60, categoria: "Blusas" },
-    { nome: "Calça jeans", preco: 150, categoria: "Calças" },
-    { nome: "Look para noite", preco: 200, categoria: "Noite" },
-    { nome: "Camiseta feminina", preco: 55, categoria: "Blusas" }
+    {
+        nome: "Conjunto Feminino",
+        preco: 120,
+        categoria: "Conjuntos",
+        imagem: "imagem/Conjuntos femininos/conjunto-feminino-01.jpg"
+    },
+    {
+        nome: "Blusa Feminina",
+        preco: 60,
+        categoria: "Blusas",
+        imagem: "imagem/blusa-camiseta/blusa-camiseta-01.jpg"
+    },
+    {
+        nome: "Calça Jeans",
+        preco: 150,
+        categoria: "Calças",
+        imagem: "imagem/Calças jeans/calca-jeans-01.jpg"
+    },
+    {
+        nome: "Look Noite",
+        preco: 200,
+        categoria: "Looks para noite",
+        imagem: "imagem/looks-noite/look-noite-01.jpeg"
+    },
+    {
+        nome: "Conjunto Feminino Premium",
+        preco: 130,
+        categoria: "Conjuntos",
+        imagem: "imagem/Conjuntos femininos/conjunto-feminino-02.jpg"
+    }
 ];
-
-const container = document.getElementById("catalogo");
-const saidaJson = document.getElementById("saida-json");
-const botaoExportar = document.getElementById("exportar-json");
 
 function criarCard(produto) {
     return `
         <article class="produto-card">
+            <img src="${produto.imagem}" alt="${produto.nome}">
             <h3>${produto.nome}</h3>
-            <p>Preço: R$ ${produto.preco}</p>
             <p>Categoria: ${produto.categoria}</p>
+            <p>Preço: R$ ${produto.preco.toFixed(2)}</p>
         </article>
     `;
 }
 
+const catalogo = document.getElementById("catalogo-produtos");
+
 for (let i = 0; i < produtos.length; i++) {
-    container.innerHTML += criarCard(produtos[i]);
+    catalogo.innerHTML += criarCard(produtos[i]);
 }
 
-botaoExportar.addEventListener("click", function () {
-    const produtosJson = JSON.stringify(produtos, null, 2);
+document.getElementById("btn-exportar").addEventListener("click", function () {
+    const jsonProdutos = JSON.stringify(produtos, null, 2);
 
-    console.log(produtosJson);
-    saidaJson.textContent = produtosJson;
+    console.log(jsonProdutos);
+
+    document.getElementById("saida-json").textContent = jsonProdutos;
 });
