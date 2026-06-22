@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Santa Pimenta</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="cabecalho">
+        <div class="container cabecalho-conteudo">
+            <div class="marca">
+                <img src="imagem/capa/logo-santa-pimenta.png" alt="Logo Santa Pimenta">
+                <h1>Santa Pimenta</h1>
+            </div>
+
+            <nav class="menu">
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="produtos">
+            <div class="container">
+                <div class="titulo-secao">
+                    <p class="etiqueta">Catálogo</p>
+                    <h2>Produtos em destaque</h2>
+                </div>
+
+                <div class="grid-produtos" id="catalogo-produtos"></div>
+
+                <div class="area-exportar">
+                    <button id="btn-exportar" type="button">Exportar JSON</button>
+
+                    <pre id="saida-json">Clique em "Exportar JSON" para visualizar os produtos em formato JSON.</pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 Santa Pimenta Atacado.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
